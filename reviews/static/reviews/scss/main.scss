@@ -1,0 +1,263 @@
+@import "colors";
+
+@mixin gradient($property, $orientation, $color1, $percent, $color2) {
+  #{$property}: $color1 !important;
+  #{$property}: linear-gradient($orientation, $color1 $percent, $color2 100%) !important;
+  #{$property}: -webkit-linear-gradient($orientation, $color1 $percent, $color2 100%) !important;
+  #{$property}: -moz-linear-gradient($orientation, $color1 $percent, $color2 100%) !important;
+  #{$property}: -o-linear-gradient($orientation, $color1 $percent, $color2 100%) !important;
+}
+
+@mixin transition($property, $time, $type) {
+  transition: $property $time $type;
+  -webkit-transition: $property $time $type;
+  -moz-transition: $property $time $type;
+  -o-transition: $property $time $type;
+}
+
+@mixin image-height ($screen-width, $height) {
+  @media screen and (min-width: $screen-width) {
+    height: $height;
+  }
+}
+
+@mixin columncount($width, $count){
+    @media screen and (max-width: $width){
+        div.card-columns{
+            column-count: $count;
+            -webkit-column-count: $count;
+        }
+    }
+}
+
+body{
+  background: $background !important;
+  #fab-edit-profile{
+    -webkit-box-shadow: 0 3px 38px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 3px 38px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 3px 38px 0 rgba(0,0,0,0.75);
+  }
+  a{
+    color: $secondary;
+    &:hover{
+      @include transition(color, 0.25s, ease-in-out);
+      color: $primary !important;
+      text-decoration: none;
+    }
+  }
+  .bg-primary{
+    color: $secondary !important;
+    background: $primary !important;
+  }
+  .modal-content{
+    border-bottom-color: $primary;
+    border-bottom-width: thick;
+    a{
+      word-wrap: break-word;
+    }
+  }
+  nav{
+    font-weight: bold;
+    @include gradient(background, 0deg, $secondary, 57%, $primary);
+    @media screen and (max-width: 991px){
+      @include gradient(background, 180deg, $secondary, 0%, $secondary);
+    }
+    .navbar-brand{
+      margin-right: 0.2em !important;
+    }
+    #nav-menu{
+      top: 120% !important;
+      border-bottom-color: $primary;
+      border-bottom-width: thick;
+      font-size: 0.9em !important;
+      font-weight: bold;
+      color: $secondary;
+      .dropdown-item{
+        border-radius: 0.25em;
+        @include transition(background, 0.25s, ease-in);
+        @include transition(color, 0.25s, ease-in-out);
+        i{
+          width: 1.1em;
+        }
+        &:hover{
+          background: $light;
+          color: $success;
+          i{
+            @include transition(color, 0.25s, ease-in-out);
+            color: $success;
+          }
+        }
+      }
+    }
+    input[type=search]{
+      margin-right: 0 !important;
+      border-right: 0 !important;
+      visibility: hidden;
+      @media screen and (max-width: 991px){
+        visibility: visible;
+      }
+    }
+    #searchIcon{
+      background: transparent;
+      border-color: transparent;
+      color: white;
+      border-left: 0 !important;
+      @media screen and (max-width: 991px){
+        background: white;
+        border-color: white;
+        color: $secondary;
+      }
+    }
+  }
+  .btn-gradient{
+    position: relative;
+    z-index: 9;
+    background: $secondary;
+    border: 0;
+    overflow: hidden;
+    color: $light;
+    span{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      @include transition(opacity, 0.4s, ease-in-out);
+      @include gradient(background, 0deg, $secondary, 75%, $primary);
+    }
+    &:hover{
+      color: $light !important;
+      span{
+        opacity: 1;
+      }
+    }
+  }
+  section#carousel{
+    .carousel-item{
+      @include image-height(1100px, 30vh);
+      @include image-height(768px, 40vh);
+      overflow: hidden;
+    }
+  }
+  div#profile-page{
+    section#profile-cover{
+      .image-container{
+        height: 40vh;
+        @media screen and (max-width:768px){
+          height: 0;
+        }
+        overflow: hidden;
+      }
+    }
+    section#profile-content{
+      @media (min-width: 768px) and (max-width: 990px) {
+        & {
+          width: 90% !important;
+          max-width: 90% !important;
+        }
+        .col-sm-3 {
+          flex: 0 0 35% !important;
+          max-width: 35% !important;
+        }
+        .col-sm-9 {
+          flex: 0 0 65% !important;
+          max-width: 65% !important;
+        }
+      }
+      @media (max-width: 768px) {
+        .col-sm-3, .col-sm-9 {
+          flex: 0 0 100% !important;
+          max-width: 100% !important;
+          position: relative !important;
+          width: 100% !important;
+          padding-right: 15px !important;
+          padding-left: 15px !important;
+        }
+      }
+      #profile-image{
+        width: 20em;
+        height: 20em;
+        align-self: center;
+        position: absolute;
+        overflow: hidden;
+        top: -10em;
+        border: 8px $light solid;
+      }
+      .profile-details{
+        width: auto !important;
+        align-self: center;
+      }
+
+      @media screen and (max-width: 860px){
+        .info{
+          margin-top: 1em;
+        }
+        #profile-image{
+          position: relative;
+          width: 10em;
+          height: 10em;
+          margin-top: 2em;
+          top: 0;
+        }
+        .profile-card {
+          width: 100% !important;
+        }
+        .profile-details{
+          margin-top: 2em !important;
+        }
+      }
+      .col-menu {
+        li {
+          cursor: pointer;
+          border: 0;
+          color: $dark;
+          @include transition(all, .2s, ease-in-out);
+          &:hover, &.active {
+            color: $secondary;
+            background: $light;
+            border-right: 0.5em $primary solid !important;
+          }
+        }
+      }
+    }
+  }
+  .toast{
+    opacity: 1 !important;
+    position: fixed;
+    float: right;
+    bottom: 0.5rem;
+    left: 1rem;
+    z-index: 9999;
+    strong{
+      color: $secondary;
+    }
+  }
+
+  // Forum Styling
+
+  section.jtron{
+    background-size: cover;
+    background-position: center;
+    div.greeting{
+      position: relative;
+      color: $primary;
+      background: rgba(0, 0, 0, 0.8);
+      .close-greeting{
+        position: absolute;
+        top: 0.5em;
+        right: 0.5em;
+        font-weight: bold;
+        font-size: 1.1em;
+        cursor: pointer;
+        @include transition(color, .2s, ease-in-out);
+        &:hover{
+          color: $danger;
+        }
+      }
+    }
+  }
+
+  // Forum Styling End
+}

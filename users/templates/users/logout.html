@@ -1,0 +1,9 @@
+{% extends "reviews/layout.html" %}
+{% block content %}
+    <div class="container card px-0 my-4 shadow-sm">
+        <div class="card-body"><h2 class="display-4">You have been logged out</h2></div>
+        <div class="border-top pt-3 card-footer">
+            <small class="text-muted">Wanna log back in? <a href="{% url 'login' %}" class="ml-1">Sign in</a></small>
+        </div>
+    </div>
+{% endblock content %}

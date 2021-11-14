@@ -1,0 +1,38 @@
+{% extends "reviews/layout.html" %}
+{% block content %}
+    <section class="container-fluid jtron px-0" style="background: url('{{ user.profile.cover.url }}');">
+        <div class="container-fluid greeting py-5">
+            <div class="close-greeting">&times;</div>
+            <div class="container my-4">
+                <h1 class="display-4">Welcome, {{ user.first_name }}.</h1>
+                <h5>Here's a few new posts that you might be interested in, enjoy!</h5>
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid bg-light py-2">
+        <div class="container">
+            <div class="row mb-2">
+            {% for post in posts %}
+                <div class="col-md-6">
+                    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary text-capitalize">{{ post.date_created }}</strong>
+                            <h5 class="mb-0 font-weight-bold">{{ post.title }}</h5>
+                            <small>
+                                <div class="mb-1 text-muted">@{{ post.author.username }}</div>
+                                <p class="card-text mb-auto">{{ post.content|slice:50 }}...</p>
+                                <a href="#" class="stretched-link">See More</a>
+                            </small>
+                        </div>
+                        <div class="col d-none d-lg-block" {% if post.image is not None %} style="background: url('{{ post.image.url }}') center; background-size: cover;" {% endif %}>
+                            {% if post.image is None %}
+                                <svg class="bd-placeholder-img"  xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" ><rect width="100%" height="100%" fill="#55595c"></rect></svg>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        </div>
+    </section>
+{% endblock content %}

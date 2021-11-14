@@ -1,0 +1,211 @@
+body {
+  background: #e6e6e6 !important; }
+  body #fab-edit-profile {
+    -webkit-box-shadow: 0 3px 38px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 3px 38px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0 3px 38px 0 rgba(0, 0, 0, 0.75); }
+  body a {
+    color: #2c3e50; }
+    body a:hover {
+      transition: color 0.25s ease-in-out;
+      -webkit-transition: color 0.25s ease-in-out;
+      -moz-transition: color 0.25s ease-in-out;
+      -o-transition: color 0.25s ease-in-out;
+      color: #1abc9c !important;
+      text-decoration: none; }
+  body .bg-primary {
+    color: #2c3e50 !important;
+    background: #1abc9c !important; }
+  body .modal-content {
+    border-bottom-color: #1abc9c;
+    border-bottom-width: thick; }
+    body .modal-content a {
+      word-wrap: break-word; }
+  body nav {
+    font-weight: bold;
+    background: #2c3e50 !important;
+    background: linear-gradient(0deg, #2c3e50 57%, #1abc9c 100%) !important;
+    background: -webkit-linear-gradient(0deg, #2c3e50 57%, #1abc9c 100%) !important;
+    background: -moz-linear-gradient(0deg, #2c3e50 57%, #1abc9c 100%) !important;
+    background: -o-linear-gradient(0deg, #2c3e50 57%, #1abc9c 100%) !important; }
+    @media screen and (max-width: 991px) {
+      body nav {
+        background: #2c3e50 !important;
+        background: linear-gradient(180deg, #2c3e50 0%, #2c3e50 100%) !important;
+        background: -webkit-linear-gradient(180deg, #2c3e50 0%, #2c3e50 100%) !important;
+        background: -moz-linear-gradient(180deg, #2c3e50 0%, #2c3e50 100%) !important;
+        background: -o-linear-gradient(180deg, #2c3e50 0%, #2c3e50 100%) !important; } }
+    body nav .navbar-brand {
+      margin-right: 0.2em !important; }
+    body nav #nav-menu {
+      top: 120% !important;
+      border-bottom-color: #1abc9c;
+      border-bottom-width: thick;
+      font-size: 0.9em !important;
+      font-weight: bold;
+      color: #2c3e50; }
+      body nav #nav-menu .dropdown-item {
+        border-radius: 0.25em;
+        transition: background 0.25s ease-in;
+        -webkit-transition: background 0.25s ease-in;
+        -moz-transition: background 0.25s ease-in;
+        -o-transition: background 0.25s ease-in;
+        transition: color 0.25s ease-in-out;
+        -webkit-transition: color 0.25s ease-in-out;
+        -moz-transition: color 0.25s ease-in-out;
+        -o-transition: color 0.25s ease-in-out; }
+        body nav #nav-menu .dropdown-item i {
+          width: 1.1em; }
+        body nav #nav-menu .dropdown-item:hover {
+          background: #f8f9fa;
+          color: #28a745; }
+          body nav #nav-menu .dropdown-item:hover i {
+            transition: color 0.25s ease-in-out;
+            -webkit-transition: color 0.25s ease-in-out;
+            -moz-transition: color 0.25s ease-in-out;
+            -o-transition: color 0.25s ease-in-out;
+            color: #28a745; }
+    body nav input[type=search] {
+      margin-right: 0 !important;
+      border-right: 0 !important;
+      visibility: hidden; }
+      @media screen and (max-width: 991px) {
+        body nav input[type=search] {
+          visibility: visible; } }
+    body nav #searchIcon {
+      background: transparent;
+      border-color: transparent;
+      color: white;
+      border-left: 0 !important; }
+      @media screen and (max-width: 991px) {
+        body nav #searchIcon {
+          background: white;
+          border-color: white;
+          color: #2c3e50; } }
+  body .btn-gradient {
+    position: relative;
+    z-index: 9;
+    background: #2c3e50;
+    border: 0;
+    overflow: hidden;
+    color: #f8f9fa; }
+    body .btn-gradient span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+      -webkit-transition: opacity 0.4s ease-in-out;
+      -moz-transition: opacity 0.4s ease-in-out;
+      -o-transition: opacity 0.4s ease-in-out;
+      background: #2c3e50 !important;
+      background: linear-gradient(0deg, #2c3e50 75%, #1abc9c 100%) !important;
+      background: -webkit-linear-gradient(0deg, #2c3e50 75%, #1abc9c 100%) !important;
+      background: -moz-linear-gradient(0deg, #2c3e50 75%, #1abc9c 100%) !important;
+      background: -o-linear-gradient(0deg, #2c3e50 75%, #1abc9c 100%) !important; }
+    body .btn-gradient:hover {
+      color: #f8f9fa !important; }
+      body .btn-gradient:hover span {
+        opacity: 1; }
+  body section#carousel .carousel-item {
+    overflow: hidden; }
+    @media screen and (min-width: 1100px) {
+      body section#carousel .carousel-item {
+        height: 30vh; } }
+    @media screen and (min-width: 768px) {
+      body section#carousel .carousel-item {
+        height: 40vh; } }
+  body div#profile-page section#profile-cover .image-container {
+    height: 40vh;
+    overflow: hidden; }
+    @media screen and (max-width: 768px) {
+      body div#profile-page section#profile-cover .image-container {
+        height: 0; } }
+  @media (min-width: 768px) and (max-width: 990px) {
+    body div#profile-page section#profile-content {
+      width: 90% !important;
+      max-width: 90% !important; }
+    body div#profile-page section#profile-content .col-sm-3 {
+      flex: 0 0 35% !important;
+      max-width: 35% !important; }
+    body div#profile-page section#profile-content .col-sm-9 {
+      flex: 0 0 65% !important;
+      max-width: 65% !important; } }
+  @media (max-width: 768px) {
+    body div#profile-page section#profile-content .col-sm-3, body div#profile-page section#profile-content .col-sm-9 {
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+      position: relative !important;
+      width: 100% !important;
+      padding-right: 15px !important;
+      padding-left: 15px !important; } }
+  body div#profile-page section#profile-content #profile-image {
+    width: 20em;
+    height: 20em;
+    align-self: center;
+    position: absolute;
+    overflow: hidden;
+    top: -10em;
+    border: 8px #f8f9fa solid; }
+  body div#profile-page section#profile-content .profile-details {
+    width: auto !important;
+    align-self: center; }
+  @media screen and (max-width: 860px) {
+    body div#profile-page section#profile-content .info {
+      margin-top: 1em; }
+    body div#profile-page section#profile-content #profile-image {
+      position: relative;
+      width: 10em;
+      height: 10em;
+      margin-top: 2em;
+      top: 0; }
+    body div#profile-page section#profile-content .profile-card {
+      width: 100% !important; }
+    body div#profile-page section#profile-content .profile-details {
+      margin-top: 2em !important; } }
+  body div#profile-page section#profile-content .col-menu li {
+    cursor: pointer;
+    border: 0;
+    color: #343a40;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out; }
+    body div#profile-page section#profile-content .col-menu li:hover, body div#profile-page section#profile-content .col-menu li.active {
+      color: #2c3e50;
+      background: #f8f9fa;
+      border-right: 0.5em #1abc9c solid !important; }
+  body .toast {
+    opacity: 1 !important;
+    position: fixed;
+    float: right;
+    bottom: 0.5rem;
+    left: 1rem;
+    z-index: 9999; }
+    body .toast strong {
+      color: #2c3e50; }
+  body section.jtron {
+    background-size: cover;
+    background-position: center; }
+    body section.jtron div.greeting {
+      position: relative;
+      color: #1abc9c;
+      background: rgba(0, 0, 0, 0.8); }
+      body section.jtron div.greeting .close-greeting {
+        position: absolute;
+        top: 0.5em;
+        right: 0.5em;
+        font-weight: bold;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: color 0.2s ease-in-out;
+        -webkit-transition: color 0.2s ease-in-out;
+        -moz-transition: color 0.2s ease-in-out;
+        -o-transition: color 0.2s ease-in-out; }
+        body section.jtron div.greeting .close-greeting:hover {
+          color: #dc3545; }
+
+/*# sourceMappingURL=main.css.map */

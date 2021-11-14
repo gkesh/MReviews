@@ -1,0 +1,77 @@
+{% extends "reviews/layout.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div id="profile-page">
+        <section class="container-fluid p-0" id="profile-cover">
+            <div class="image-container w-100">
+                <img src="{{ user.profile.cover.url }}" class="d-block w-100 h-auto" alt="Carousel Image">
+            </div>
+        </section>
+        <section class="container mt-4 mb-4 col-content" id="profile-content">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div></div>
+                    <ul class="list-group col-menu shadow" id="col-menu">
+                        <li class="list-group-item col-menu-item info-item active" data-attr="info"><i class="fas fa-user mr-3"></i>User Info</li>
+                        <li class="list-group-item col-menu-item posts-item" data-attr="posts"><i class="fas fa-vote-yea mr-3"></i>Posts</li>
+                        <li class="list-group-item col-menu-item comments-item" data-attr="comments"><i class="fas fa-comments mr-3"></i>Comments</li>
+                        <li class="list-group-item col-menu-item upvotes-item" data-attr="upvotes"><i class="fas fa-thumbs-up mr-3"></i>Upvotes</li>
+                        <li class="list-group-item col-menu-item downvotes-item" data-attr="downvotes"><i class="fas fa-thumbs-down mr-3"></i>Downvotes</li>
+                    </ul>
+                </div>
+                <div class="col-sm-9">
+                    <div class="col-12 p-0 data-div mt-0 col-container info">
+                        <div class="card container-fluid bg-light rounded shadow profile-card" style="position: relative; overflow:visible">
+                            <div id="profile-image" class="rounded-circle p-0 bg-dark"><img src="{{ user.profile.avatar.url }}" class="w-100 h-100" alt=""></div>
+                            <div class="profile-details px-2 mx-5 mb-4" style="margin-top: 12em">
+                                <div class="container-fluid text-center position-relative" style="top: -2em;">
+                                    <h1 class="display-6 mb-0">{{ user.first_name }} {{ user.last_name }}</h1>
+                                    <h6 class="text-muted">@{{ user.username }}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid col-container p-0 posts d-none">
+
+                    </div>
+                    <div class="container-fluid col-container p-0 comments d-none">
+
+                    </div>
+                    <div class="container-fluid col-container p-0 upvotes d-none">
+
+                    </div>
+                    <div class="container-fluid col-container p-0 downvotes d-none">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h5 class="modal-title font-weight-bold" id="exampleModalScrollableTitle"><i class="fas fa-pen mr-3"></i>Update User</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body py-0">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+                            <div class="card-body">
+                                {{ user_form|crispy }}
+                                {{ profile_form|crispy }}
+                                <div class="form-group">
+                                    <button class="btn btn-gradient" type="submit"><span></span>Update</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="rounded-circle btn btn-gradient position-fixed float-right" id="fab-edit-profile" data-toggle="modal" data-target="#exampleModalScrollable" style="height: 50px !important; bottom: 1em; right: 1em;"><i class="fas fa-pen"></i></button>
+{% endblock content %}

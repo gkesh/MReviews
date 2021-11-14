@@ -1,0 +1,21 @@
+{% extends "reviews/layout.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container card px-0 my-4 shadow-sm">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4 card-header">Join Today</legend>
+                <div class="card-body">
+                    {{ form|crispy }}
+                    <div class="form-group">
+                        <button class="btn btn-gradient" type="submit"><span></span>Register</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <div class="border-top pt-3 card-footer">
+            <small class="text-muted">Already Have An Account? <a href="{% url 'login' %}" class="ml-1">Sign In</a></small>
+        </div>
+    </div>
+{% endblock content %}
